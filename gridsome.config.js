@@ -6,7 +6,7 @@
 
 module.exports = {
   siteUrl: 'https://eco-fable.github.io',
-  siteName: 'Gridsome Blog Starter',
+  siteName: 'Eco-Fable',
   siteDescription: 'A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.',
 
   templates: {
