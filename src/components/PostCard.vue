@@ -48,6 +48,7 @@ export default {
 
   &__image {
     min-width: 100%;
+
   }
 
   &__title {
@@ -74,6 +75,16 @@ export default {
     overflow: hidden;
     text-indent: -9999px;
     z-index: 0;
+  }
+
+  &__description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px){
+  .post-card__title {
+    font-size: .8rem;
   }
 }
 </style>

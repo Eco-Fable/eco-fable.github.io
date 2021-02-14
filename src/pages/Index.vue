@@ -1,13 +1,14 @@
 <template>
   <Layout :show-logo="false">
     <!-- Author intro -->
-    <Author :show-title="true" />
+    <!-- <Author :show-title="true" /> -->
+    <img src="../assets/images/Coralogo-resized-final.png" alt="Eco-Fable" class="light-logo" />
+    <img src="../assets/images/Coralogo-inverted-full-resized_final.png" alt="Eco-Fable" class="dark-logo" />
 
     <!-- List posts -->
     <div class="posts">
-      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
+      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
     </div>
-
   </Layout>
 </template>
 
@@ -21,7 +22,6 @@ query {
         date (format: "D. MMMM YYYY")
         timeToRead
         description
-        cover_image (width: 770, height: 380, blur: 10)
         path
         tags {
           id
@@ -48,3 +48,19 @@ export default {
   }
 }
 </script>
+
+
+<style scoped>
+img {
+  max-width: 45%;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 35px;
+}
+
+@media (max-width: 768px) {
+  img {
+    max-width: 75%;
+  }
+}
+</style>
