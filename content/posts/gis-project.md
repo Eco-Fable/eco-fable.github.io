@@ -24,4 +24,17 @@ Maybe, like myself, you could not obtain a more advanced ArcMap license. Maybe y
 In the early stages of my project, I was working with QGIS. Once I was able to obtain access to ArcMap, I switched to using ArcMap exclusively for the rest of the project. When I imported my first DEM tile into my ArcMap project, the minimum and maximum elevation values were vastly different from what they had been in QGIS. I quickly realized that the tile’s statistics for some reason had not been automatically calculated in ArcMap like they had been in QGIS. This is a pretty simple thing, but it wasn’t something I’d come across before, as most of the data I worked with in the past usually automatically had their statistics calculated. If you right-click your data and go to Properties, you can scroll down and see whether or not any statistics are calculated. This is a fairly easy thing to rectify, using the Calculate Statistics tool. Or, you can calculate the statistics for the output of a tool you’re using by going into the Environment Settings. I kept the skip factor as 1, and was encouraged to set the Ignore Value parameter to whatever my tile’s NoData value was (in this case it was -999999).
 
 
-![A window where the Calculate Statistics box is filled,indicating they will be calculated for the tool’s output raster ](./images/Raster_Storage_Environmental_Settings-edited_copy.jpg)
+![A window where the Calculate Statistics box is filled,indicating they will be calculated for the tool’s output raster](./images/Raster-Storage-Environmental-Settings.jpg)
+
+<em>The checkbox for the Calculate Statistics box is filled, indicating they will be calculated for the tool’s output raster </em>
+
+
+4). <em> If it can be avoided, do not change the coordinate system of your elevation data </em>
+One of the first steps of any mapping assignment is to verify that your coordinate system is consistent for all your data. This includes making sure the coordinate system of the data frame matches as well. When I first started the project, I selected one of my tiles to be my first layer, so that the data frame’s coordinate system matched that of the tile’s. I was encouraged to not reproject the coordinate system of my DEM tiles, but instead simply reproject my vector data to match the projected coordinate system of my DEM tiles. This is because reprojecting elevation data could be made more difficult due to their z value i.e. the vertical/elevation unit. The reason for this is because if the elevation data is reprojected to a coordinate system with different units, you would need to be sure you convert the z values units as well, otherwise you risk creating inaccurate results. Which brings me to my next point:
+
+
+5.) <em> Keep track of the units of your z-value </em>
+The units of your elevation data’s z value may not necessarily match the units of the x and y values. For instance, the x and y – or linear – units may be in feet, but the z value could be in meters (I don’t know why this happens sometimes with elevation data. But considering one of the people I frequently contacted for GIS tips also did not know why, I don’t feel so bad). I was encouraged to make sure that when I downloaded my DEM tiles, they were in a coordinate system with matching units for their x, y, and z values. The units may be listed under the Properties tab. If not, check the metadata.
+
+![A window where labelled Properties, listing the projected coordinate system of an elevation tile, with the listed horizontal linear unit](./images/Raster-Layer-Properties.jpg)
+<em>Under the Properties, you can see the projected coordinate system of an elevation tile, with the listed horizontal linear unit</em>
