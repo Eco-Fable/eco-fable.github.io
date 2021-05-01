@@ -38,3 +38,19 @@ The units of your elevation data’s z value may not necessarily match the units
 
 ![A window where labelled Properties, listing the projected coordinate system of an elevation tile, with the listed horizontal linear unit](./images/Raster-Layer-Properties.jpg)
 <em>Under the Properties, you can see the projected coordinate system of an elevation tile, with the listed horizontal linear unit</em>
+
+6). <em> Use the correct Resample method </em>
+As I mentioned earlier, resampling geospatial data refers to changing the cell size, or resolution, of the data. The resample method employed will change based on the kind of data you are using. For continuous data, like elevation data, you want to use either the Bilinear or the Cubic Convolution methods.
+
+7). <em> Keep rasters aligned </em>
+The dataset I used for my analysis was available for download in tile sections from NOAA’s Data Access Viewer. Because they all came from the same dataset, the tiles were probably all aligned to each other at the start. But to be safe, I was encouraged to use the Snap Raster under the Environment Settings. I resampled my first tile without using the Snap Raster, then set that tile output as the Snap Raster for every other tile that I resampled after that.
+
+8). <em> Selecting your mosaic tool </em>
+A mosaic, as stated earlier, is when you create a single image from a series of images. ArcMap has two tools that can be used for creating mosaics: the Mosaic tool, and the Mosaic to New Raster tool. The Mosaic to New Raster tool creates a new output, while the Mosaic tool alters the target raster by combining it with the input rasters. The Mosaic tool also has more parameter options for the NoData and background values. I tested out the Mosaic to New Raster tool, but in the end decided to stick with the Mosaic tool. I used the Copy Raster tool to make a raster copy of one of my resampled tiles. That tile was then used as the target raster, so I could combine it with my resampled inputs. Because these DEM tiles originated from the same dataset, overlapping may have been a non-issue. But to be safe, it was suggested I use the Mean mosaic type, thereby instructing the tool to take the average pixel value for any overlapping cells.
+
+![Example of DEM tiles, which resemble squares, underneath my drainage basins (in pink) layer and datapoint layer](./images/Resampling-tiles-without-background-index.jpg)
+<em>Example of DEM tiles, underneath my drainage basins (in pink) layer and datapoint layer</em>
+
+![Example of DEM tiles forming a mosaic, which resembles a larger, continuous rectange](./images/Mosaic-without-background-tile-index.jpg)
+<em>Example of a mosaic of the DEM tiles</em>
+
