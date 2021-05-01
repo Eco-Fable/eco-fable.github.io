@@ -25,7 +25,6 @@ In the early stages of my project, I was working with QGIS. Once I was able to o
 
 
 ![A window where the Calculate Statistics box is filled,indicating they will be calculated for the tool’s output raster](./images/Raster-Storage-Environmental-Settings.jpg)
-
 <em>The checkbox for the Calculate Statistics box is filled, indicating they will be calculated for the tool’s output raster </em>
 
 
