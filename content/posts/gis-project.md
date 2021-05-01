@@ -5,7 +5,7 @@ published: true
 tags: ['Writing']
 canonical_url: false
 path: "resampling-and-mosaicking-elevation-data-some-gis-tips"
-description: "stuff"
+
 ---
 
 I recently finished up a seasonal position with a state agency, and during my time I was tasked with helping my supervisor with a research project involving Geographic Information System (GIS). GIS can be a tricky software, even for someone like myself who has had previous experience using it for other past projects. For this particular project, I downloaded digital elevation models (DEMs) from a dataset available for use online that covered areas maintained by hundreds of study plots. This data was then resampled (changing the cell size/resolution) and mosaicked (combining multiple images to create one seamless image) in ArcMap, so I could clip them using a separate file of drainage basin polygons as my chosen extent. These clipped outputs were then used to begin constructing a series of topographic wetness indexes using the open-source System for Automated Geoscientific Analyses software (SAGA GIS).
